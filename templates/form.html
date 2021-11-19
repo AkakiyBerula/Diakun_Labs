@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Form!</title>
+        <link href="{{url_for('static', filename = 'bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <span class = "text-center" style="color: rgb(66, 66, 150);">
+            <h1>Реєстрація особистого електронного кабінету</h1>
+        </span>
+        <div class = "container">
+            <form method="POST" action="{{ url_for('form')}}">
+                {{ form.csrf_token }}
+                <div class = "form-inline form-group row">
+                    {{ form.login.label(class_="col-sm-3 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.login(class_="form-control col-sm-3") }}
+                </div>
+                <div class="form-inline form-group row">
+                    {{ form.password.label(class="col-sm-3 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.password(class_="form-control col-sm-3") }}
+
+                    {{ form.confirm_password.label(class="col-sm-3 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.confirm_password(class_="form-control  col-sm-3") }}
+
+                </div>
+                <h3 style="color: rgb(66, 66, 150);">Екзаменаційний лист (сертифікат) ЗНО магістра</h3> 
+                <div class="form-inline form-group row">
+                    {{ form.number.label(class_="col-sm-2 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.number(class_="form-control col-sm-2") }}
+
+                    {{ form.pin.label(class_="col-sm-2 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.pin(class_="form-control col-sm-2") }}
+
+                    {{ form.year.label(class_="col-sm-2 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.year(class_="form-control col-sm-2") }}
+                </div>
+                <h3 style="color: rgb(66, 66, 150);">Документ про освіту</h3>
+                <div class="form-inline form-group row">
+                    {{ form.diplom_serial.label(class_="col-sm-3 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.diplom_serial(class_="form-control col-sm-3") }}
+
+                    {{ form.diplom_number.label(class_="col-sm-2 col-form-label",  style="color: rgb(66, 66, 150);") }}
+                    {{ form.diplom_number(class_="form-control col-sm-3") }}
+                </div>
+                <input type = "submit" value = "Зареєструвати" class="form-control btn btn-primary mb-2 float-right">
+            </form>
+        </div>
+        {% include "base.html" %}
+    </body>
+</html>
