@@ -1,18 +1,18 @@
 {
     "vlad5dyakun@gmail.com": {
         "password": "aezakmi",
-        "number_e": "3243432",
+        "number_e": "1234567",
         "pin_e": "4321",
-        "year_of_receive": "1987",
+        "year_of_receive": "1980",
         "diplom_serial": "AB",
         "diplom_number": "43211234"
     },
     "vasaivanochko@gmail.com": {
-        "password": "operationx22/",
+        "password": "operationx",
         "number_e": "3243432",
         "pin_e": "5567",
-        "year_of_receive": "2017",
-        "diplom_serial": "C19",
+        "year_of_receive": "2018",
+        "diplom_serial": "C11",
         "diplom_number": "352197"
     }
 }

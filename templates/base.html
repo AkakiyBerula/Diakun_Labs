@@ -1,34 +1,15 @@
-<div class = "container">
-    <ul>
-    {% for message in get_flashed_messages() %}
-    <span class = "text-center" style="color: green;">
-        <li><h3>{{ message }}</h3></li>
-    </span>
-        
-    {% endfor %}
-    {% for error in form.login.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.password.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.confirm_password.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.number.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.pin.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.year.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.diplom_serial.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    {% for error in form.diplom_number.errors %}
-        <li style = "color: red;">{{ error }}</li>
-    {% endfor %}
-    </ul>
-</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class ="container mt-4">
+            {% for category, message in messages %}
+                <div class = "alert alert-{{category}} alert-dismissible" role="alert">
+                    <button type = "button" class = "close" data-dismiss="alert" aria-label="Close">
+                    </button>
+                    <span class = "text-center" style="color: green;">
+                        <h3>{{ message }}</h3>
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
